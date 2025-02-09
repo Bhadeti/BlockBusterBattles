@@ -1,0 +1,115 @@
+/* Default Light Mode */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    background-color: #f8f8f8;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+.card-image-container {
+    position: relative;
+    width: 100px;
+    height: 140px;
+    overflow: hidden;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    position: absolute;
+    pointer-events: none; /* Prevent right-click and interactions */
+}
+
+/* 🔹 Watermark Overlay */
+.watermark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 140px;
+    background-image: url('http://170.187.148.48:5000/static/images/BB%20Transparent.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.card-info {
+    flex: 1;
+    padding-left: 15px;
+}
+
+.error-message {
+    color: red;
+}
+
+/* 🔹 Dark Mode Styling */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.card.dark-mode {
+    background-color: #1e1e1e;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.toggle-btn {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.toggle-btn:hover {
+    background-color: #444;
+}
+
+.dark-mode .toggle-btn {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark-mode .toggle-btn:hover {
+    background-color: #ddd;
+}

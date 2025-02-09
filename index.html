@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Toggle Button for Dark Mode -->
+    <div class="toggle-container">
+        <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+
+    <h1>Player Cards</h1>
+
+    <!-- Input for Player UUID -->
+    <input type="text" id="player_uuid" placeholder="Enter Player UUID">
+    <button onclick="fetchPlayerCards()">Get Cards</button>
+
+    <!-- Sorting Dropdown -->
+    <label for="sort_option">Sort By:</label>
+    <select id="sort_option" onchange="fetchPlayerCards()">
+        <option value="name">Name</option>
+        <option value="power">Power</option>
+        <option value="rarity">Rarity</option>
+        <option value="ability">Ability</option>
+        <option value="collection_number">Collection Number</option>
+        <option value="deck">Deck Status (In Deck First)</option>
+    </select>
+
+    <!-- Season Filter Dropdown -->
+    <label for="season_filter">Filter by Season:</label>
+    <select id="season_filter" onchange="fetchPlayerCards()">
+        <option value="all">All Seasons</option>
+    </select>
+
+    <!-- Card Display Area -->
+    <div id="player_cards" class="card-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
